@@ -26,5 +26,40 @@ public class TestReceiptCalculator extends TestCase {
 							"Total: 29.83";
 		assertEquals(expected , output);
 	}
+	
+
+	public void testSecondReceipt() {
+	  
+	    String input = 
+	      "1 imported box of chocolates at 10.00\n" +
+	      "1 imported bottle of perfume at 47.50";
+
+	    String output = calculator.calculate(input);
+	    String expected =   
+	      "1 imported box of chocolates: 10.50\n" +
+	      "1 imported bottle of perfume: 54.65\n" +
+	      "Sales Taxes: 7.65\n" +
+	      "Total: 65.15";
+	    assertEquals(expected , output);
+	}
+
+	public void testThirdReceipt() {
+	  
+	    String input = 
+	      "1 imported bottle of perfume at 27.99\n" +
+	      "1 bottle of perfume at 18.99\n" +
+	      "1 packet of headache pills at 9.75\n" +
+	      "1 box of imported chocolates at 11.25";
+	  
+	    String output = calculator.calculate(input);
+	    String expected =   
+	      "1 imported bottle of perfume: 32.19\n" +
+	      "1 bottle of perfume: 20.89\n" +
+	      "1 packet of headache pills: 9.75\n" +
+	      "1 imported box of chocolates: 11.85\n" +
+	      "Sales Taxes: 6.70\n" +
+	      "Total: 74.68";
+	    assertEquals(expected , output);
+	}
 
 }
