@@ -1,22 +1,17 @@
 package me.drdo.test.altan;
 
-import static org.junit.Assert.*;
+import junit.framework.TestCase;
 import me.drdo.altan.ReceiptCalculator;
 
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-public class TestReceiptCalculator {
+public class TestReceiptCalculator extends TestCase {
 	
-	private static ReceiptCalculator calculator;
+	private ReceiptCalculator calculator;
 	
-	@BeforeClass
-	public static void init() {
-		calculator = new ReceiptCalculator();
-	}	
-
-	@Test
-	public void test1() {
+    protected void setUp() {
+    	calculator = new ReceiptCalculator();        
+    }
+	
+	public void testFirstReceipt() {
 	
 		String input = 
 				"1 book at 12.49\n" + 
