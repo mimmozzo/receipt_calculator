@@ -1,9 +1,13 @@
-package me.drdo.altan;
+package me.drdo.altan.input;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.Arrays;
+
+import me.drdo.altan.beans.Money;
+import me.drdo.altan.beans.Receipt;
+import me.drdo.altan.beans.ReceiptItem;
 
 import org.apache.commons.lang3.StringUtils;
 

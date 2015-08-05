@@ -1,4 +1,5 @@
-package me.drdo.altan;
+package me.drdo.altan.beans;
+
 
 public class ReceiptItem {
 

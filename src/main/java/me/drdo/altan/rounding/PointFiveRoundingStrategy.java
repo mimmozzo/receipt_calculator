@@ -1,4 +1,6 @@
-package me.drdo.altan;
+package me.drdo.altan.rounding;
+
+import me.drdo.altan.beans.Money;
 
 public class PointFiveRoundingStrategy implements RoundingStrategy {
 

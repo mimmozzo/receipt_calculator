@@ -1,13 +1,24 @@
-package me.drdo.altan;
+package me.drdo.altan.calc;
 
 import java.util.List;
+
+import me.drdo.altan.beans.Money;
+import me.drdo.altan.beans.Receipt;
+import me.drdo.altan.beans.ReceiptItem;
+import me.drdo.altan.rounding.RoundingStrategy;
+import me.drdo.altan.tax.TaxRateCalculator;
 
 public class TaxesCalculationStrategy implements CalculationStrategy {
 	
 	private RoundingStrategy roundingStrategy;
+	private TaxRateCalculator taxCalculator;
 
 	public void setRoundingStrategy(RoundingStrategy roundingStrategy) {
 		this.roundingStrategy = roundingStrategy;
+	}
+	
+	public void setTaxCalculator(TaxRateCalculator taxCalculator) {
+		this.taxCalculator = taxCalculator;
 	}
 	
 	public void calculate(Receipt receipt) {
@@ -15,7 +26,7 @@ public class TaxesCalculationStrategy implements CalculationStrategy {
 		Money taxes = new Money();
 		List<ReceiptItem> receiptEntries = receipt.getReceiptEntries();
 		for (ReceiptItem item : receiptEntries){
-			double percentage = TaxesPercentages.getPercentage(item);
+			double percentage = taxCalculator.getTaxRate(item);
 			Money priceWithoutTaxes = item.getUnitPrice().multiply(item.getQuantity());
 			Money productTaxes = priceWithoutTaxes.multiply(percentage);
 			Money roundedProductTaxes = roundingStrategy.round(productTaxes);

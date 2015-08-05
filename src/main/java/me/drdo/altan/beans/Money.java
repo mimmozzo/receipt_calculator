@@ -1,4 +1,4 @@
-package me.drdo.altan;
+package me.drdo.altan.beans;
 
 import java.util.Locale;
 

@@ -1,9 +1,14 @@
-package me.drdo.altan;
+package me.drdo.altan.tax;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class TaxesPercentages {
+import me.drdo.altan.beans.ReceiptItem;
+
+/**
+ * This is a very naive implementation. TODO put this data in a database
+ */
+public class NaiveTaxRateCalculator implements TaxRateCalculator {
 	
 	public static double IMPORT_TAX = 0.05;
 	public static double DEFAULT_TAX = 0.10;
@@ -20,7 +25,7 @@ public class TaxesPercentages {
 	}
 	
 
-	public static double getPercentage(ReceiptItem item) {
+	public double getTaxRate(ReceiptItem item) {
 		String product = item.getProduct();
 		Double taxPercentage = productTaxMap.get(product);
 		if (taxPercentage == null)

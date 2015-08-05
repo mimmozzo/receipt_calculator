@@ -1,8 +1,8 @@
 package me.drdo.test.altan;
 
-import me.drdo.altan.Money;
-import me.drdo.altan.PointFiveRoundingStrategy;
-import me.drdo.altan.RoundingStrategy;
+import me.drdo.altan.beans.Money;
+import me.drdo.altan.rounding.PointFiveRoundingStrategy;
+import me.drdo.altan.rounding.RoundingStrategy;
 import junit.framework.TestCase;
 
 public class TestPointFiveRoundingStrategy extends TestCase {

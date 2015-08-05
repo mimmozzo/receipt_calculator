@@ -1,8 +1,8 @@
 package me.drdo.test.altan;
 
-import me.drdo.altan.Money;
-import me.drdo.altan.ReceiptItem;
-import me.drdo.altan.ReceiptParser;
+import me.drdo.altan.beans.Money;
+import me.drdo.altan.beans.ReceiptItem;
+import me.drdo.altan.input.ReceiptParser;
 import junit.framework.TestCase;
 
 public class TestReceiptParser extends TestCase {
