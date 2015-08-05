@@ -4,7 +4,8 @@ public class ReceiptItem {
 
 	private int quantity;
 	private String product;
-	private double unitPrice;
+	private Money unitPrice;
+	private Money fullPrice;
 	
 	public int getQuantity() {
 		return quantity;
@@ -14,7 +15,7 @@ public class ReceiptItem {
 		return product;
 	}
 
-	public double getUnitPrice() {
+	public Money getUnitPrice() {
 		return unitPrice;
 	}
 
@@ -26,10 +27,16 @@ public class ReceiptItem {
 		this.product = product;
 	}
 
-	public void setUnitPrice(double unitPrice) {
+	public void setUnitPrice(Money unitPrice) {
 		this.unitPrice = unitPrice;
 	}
+
+	public Money getFullPrice() {
+		return fullPrice;
+	}
 	
-	
+	public void setFullPrice(Money money) {
+		this.fullPrice = money;
+	}
 
 }

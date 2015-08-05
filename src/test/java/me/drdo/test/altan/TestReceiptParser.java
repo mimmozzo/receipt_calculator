@@ -1,5 +1,6 @@
 package me.drdo.test.altan;
 
+import me.drdo.altan.Money;
 import me.drdo.altan.ReceiptItem;
 import me.drdo.altan.ReceiptParser;
 import junit.framework.TestCase;
@@ -18,7 +19,7 @@ public class TestReceiptParser extends TestCase {
 		ReceiptItem item = parser.parseLine(inputLine);
 		assertEquals(item.getQuantity(), 1);
 		assertEquals(item.getProduct(), "imported box of chocolates");
-		assertEquals(item.getUnitPrice(), 10.00);
+		assertEquals(item.getUnitPrice(), new Money("10.00"));
 	}
 
 }

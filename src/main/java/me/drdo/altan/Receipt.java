@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Receipt {
 	
-	private double total;
-	private double salesTaxes;
+	private Money total;
+	private Money salesTaxes;
 	private List<ReceiptItem> receiptEntries;
 	
 	public Receipt() {
@@ -24,8 +24,8 @@ public class Receipt {
 			builder.append(item.getQuantity());
 			builder.append(" ");
 			builder.append(item.getProduct());
-			builder.append(" :");
-			builder.append(item.getUnitPrice());
+			builder.append(": ");
+			builder.append(item.getFullPrice());
 			builder.append("\n");
 		}
 		
@@ -35,20 +35,20 @@ public class Receipt {
 		return builder.toString();
 	}
 
-	public double getTotal() {
+	public Money getTotal() {
 		return total;
 	}
 
-	public void setTotal(double total) {
-		this.total = total;
+	public void setTotal(Money money) {
+		this.total = money;
 	}
 
-	public double getSalesTaxes() {
+	public Money getSalesTaxes() {
 		return salesTaxes;
 	}
 
-	public void setSalesTaxes(double salesTaxes) {
-		this.salesTaxes = salesTaxes;
+	public void setSalesTaxes(Money taxes) {
+		this.salesTaxes = taxes;
 	}
 
 	public List<ReceiptItem> getReceiptEntries() {

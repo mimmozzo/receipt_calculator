@@ -3,11 +3,12 @@ package me.drdo.altan;
 public class ReceiptCalculator {
 	
 	private ReceiptParser parser;
-	private Calculator calculator;
+	private CalculationStrategy calculator;
 	
 	public ReceiptCalculator() {
 		parser = new ReceiptParser();
-		calculator = new Calculator();
+		calculator = new TaxesCalculationStrategy();
+		calculator.setRoundingStrategy(new PointFiveRoundingStrategy());
 	}
 	
 	public String calculate(String receiptInput) {
