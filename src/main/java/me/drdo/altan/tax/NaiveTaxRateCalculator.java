@@ -6,7 +6,7 @@ import java.util.Map;
 import me.drdo.altan.beans.ReceiptItem;
 
 /**
- * This is a very naive implementation. TODO put this data in a database
+ * This is a very naive implementation, no database required.
  */
 public class NaiveTaxRateCalculator implements TaxRateCalculator {
 	
